@@ -1,7 +1,7 @@
 # TRELLIS.2 ready-to-run image for RunPod (built on GitHub Actions, no GPU needed to build)
 FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
 ENV DEBIAN_FRONTEND=noninteractive PIP_NO_CACHE_DIR=1 PIP_ROOT_USER_ACTION=ignore \
-    TORCH_CUDA_ARCH_LIST="8.0;8.6;8.9;9.0" FORCE_CUDA=1 \
+    TORCH_CUDA_ARCH_LIST="8.6+PTX" FORCE_CUDA=1 MAX_JOBS=2 \
     ATTN_BACKEND=xformers OPENCV_IO_ENABLE_OPENEXR=1 HF_HOME=/workspace/hf-cache \
     PYTHONPATH=/opt/TRELLIS.2
 RUN apt-get update && apt-get install -y --no-install-recommends \
