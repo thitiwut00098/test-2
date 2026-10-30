@@ -1,7 +1,7 @@
 name: build-trellis2
 on:
   push:
-    paths: ["trellis2/**", ".github/workflows/build-trellis2.yml"]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
